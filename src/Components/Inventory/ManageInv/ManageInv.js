@@ -1,15 +1,20 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import Fruit from "../../Home/Fruit/Fruit";
+import "./ManageInv.css";
 
-const ManageInv = ({ manageInv }) => {
+const ManageInv = ({ itemManage }) => {
   const { _id, name, img, description, price, quantity, supplierName } =
-    manageInv;
+    itemManage;
+  console.log(itemManage);
 
-  // const navigate = useNavigate();
   return (
     <div>
-      <h1>{name}</h1>
+      <h2>{name}</h2>
+      <img className="manage-img" src={img} alt="" />
+      <h3>Quantyty:{quantity}</h3>
+      <div>
+        <button className="edit-btn">Edit</button>
+        <button className="delete-btn">Delete</button>
+      </div>
     </div>
   );
 };
