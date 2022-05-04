@@ -28,7 +28,7 @@ const Inventory = () => {
         <input type="text" />
         <button className="btn-cart">Submit</button>
         <div>
-          <Link to={"/manageInv"}>
+          <Link to={"/manageItem"}>
             <button className="btn-cart">Manage Inventories</button>
           </Link>
         </div>
