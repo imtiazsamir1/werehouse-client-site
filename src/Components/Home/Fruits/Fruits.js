@@ -12,10 +12,20 @@ const Fruits = () => {
   }, []);
   return (
     <div>
-      <h2>Our Produts</h2>
-      {fruits.map((fruit) => (
-        <Fruit key={fruit._id} fruit={fruit}></Fruit>
-      ))}
+      <h2 className="fruit-heading">Our Produts</h2>
+      <div className="product-name">
+        <p className="products">Apple</p>
+        <p className="products">Orange</p>
+        <p className="products">Watermelon</p>
+        <p className="products">Pineapple</p>
+        <p className="products">Mango</p>
+        <p className="products">Banana</p>
+      </div>
+      <div className="cart">
+        {fruits.map((fruit) => (
+          <Fruit key={fruit._id} fruit={fruit}></Fruit>
+        ))}
+      </div>
     </div>
   );
 };

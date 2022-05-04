@@ -7,20 +7,18 @@ const Fruit = ({ fruit }) => {
   const navigate = useNavigate();
 
   const navigateToServiceDetail = (_id) => {
-    navigate(`/fruit/${_id}`);
+    navigate(`/inventory/${_id}`);
   };
   return (
     <div className="fruit-cart">
       <img className="w-100" src={img} alt="" />
+      <h2>{name}</h2>
       <h2>{price}</h2>
       <p>{description}</p>
-      <h5>{quantity}</h5>
+      <h5>Quantity:{quantity}</h5>
       <h5>Supplier-Name:{supplierName}</h5>
-      <button
-        onClick={() => navigateToServiceDetail(_id)}
-        className="btn btn-primary"
-      >
-        Buy:{name}
+      <button onClick={() => navigateToServiceDetail(_id)} className="btn-cart">
+        Update
       </button>
     </div>
   );

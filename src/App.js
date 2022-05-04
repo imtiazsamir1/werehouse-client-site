@@ -1,8 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
+import Footer from "./Components/Home/Footer/Footer";
+import Inventory from "./Components/Inventory/Inventory";
+import ManageInv from "./Components/Inventory/ManageInv/ManageInv";
 
 function App() {
   return (
@@ -11,7 +13,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route
+          path="/inventory/:inventoryId"
+          element={<Inventory></Inventory>}
+        ></Route>
+        <Route path="/manageInv" element={<ManageInv></ManageInv>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

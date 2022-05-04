@@ -1,9 +1,27 @@
-fruit-cart{
+.fruit-cart{
     border: 2px lightgray solid;
     border-radius: 20px;
     
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     padding: 15px;
-    background-color: black;
-    color: aliceblue; 
+    
+}
+.btn-cart{
+    height:30px ;
+    width: 180px;
+
+    background-color: rgba(56, 167, 56, 0.864);
+    color: aliceblue;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+.product-name{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.products{
+    margin: 15px;
+    color: rgba(56, 167, 56, 0.864);
 }

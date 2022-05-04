@@ -1,0 +1,15 @@
+.cart{
+    
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap: 55px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 40px;
+
+    
+   
+ }
+ .fruit-heading{
+     margin-top: 60px;
+ }
