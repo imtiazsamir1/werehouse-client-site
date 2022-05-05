@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        sticky="top"
+        bg="dark"
+        variant="dark"
+      >
         <Container>
           <Navbar.Brand as={Link} to="/home">
             React-Bootstrap
@@ -17,7 +23,7 @@ const Header = () => {
                 Manage Item
               </Nav.Link>
             </Nav>
-            <Nav className="me-auto">
+            <Nav>
               <Nav.Link as={Link} to="/addItem">
                 Add New Item
               </Nav.Link>
@@ -26,8 +32,8 @@ const Header = () => {
               <Nav.Link as={Link} to="/blogs">
                 Blogs
               </Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
+              <Nav.Link as={Link} to="/login">
+                Login
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
