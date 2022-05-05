@@ -1,13 +1,15 @@
 import React, { useRef } from "react";
-import { Button, Form, Toast } from "react-bootstrap";
+import { Button, Form, Toast, ToastContainer } from "react-bootstrap";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import GoogleLogin from "./GoogleLogin/GoogleLogin";
+import Loaing from "./Loaing";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -22,6 +24,14 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+  if (loading || sending) {
+    return <Loaing></Loaing>;
+  }
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
@@ -40,8 +50,12 @@ const Login = () => {
 
   const resetPassword = async () => {
     const email = emailRef.current.value;
-    await sendPasswordResetEmail(email);
-    alert("send mail");
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Sent email");
+    } else {
+      toast("please enter your email address");
+    }
   };
 
   return (
@@ -89,6 +103,7 @@ const Login = () => {
         </button>{" "}
         <GoogleLogin></GoogleLogin>
       </p>
+      <ToastContainer />
     </div>
   );
 };

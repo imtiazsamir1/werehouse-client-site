@@ -7,6 +7,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import GoogleLogin from "../Login/GoogleLogin/GoogleLogin";
+import Loaing from "../Login/Loaing";
 
 import "./Register.css";
 
@@ -20,6 +21,13 @@ const Register = () => {
   const navigateLogin = () => {
     navigate("/login");
   };
+  if (loading || updating) {
+    return <Loaing></Loaing>;
+  }
+
+  if (user) {
+    console.log("user", user);
+  }
   const handleRegister = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;

@@ -12,7 +12,9 @@ import Blogs from "./Components/Blogs/Blogs";
 import LogIn from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import GoogleLogin from "./Components/Login/GoogleLogin/GoogleLogin";
+
 import NoteFound from "./Components/NotFound/NoteFound";
+import RequireAuth from "./Components/Login/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -22,7 +24,15 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/*" element={<NoteFound></NoteFound>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/manageItem" element={<ManageItem></ManageItem>}></Route>
+
+        <Route
+          path="/manageItem"
+          element={
+            <RequireAuth>
+              <ManageItem></ManageItem>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/addItem" element={<AddItem></AddItem>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route
