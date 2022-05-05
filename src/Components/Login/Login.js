@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import GoogleLogin from "./GoogleLogin/GoogleLogin";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -57,6 +59,7 @@ const Login = () => {
         <button className="btn btn-link text-primary pe-auto text-decoration-none">
           Reset Password
         </button>{" "}
+        <GoogleLogin></GoogleLogin>
       </p>
     </div>
   );
