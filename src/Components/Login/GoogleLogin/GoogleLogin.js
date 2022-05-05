@@ -7,10 +7,12 @@ import google from "../../img/google.png";
 const GoogleLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
+  let errorElement;
+
   if (error) {
-    return (
+    errorElement = (
       <div>
-        <p className="text-denger">Error:{error.message}</p>
+        <p className="text-danger">Error:{error.message}</p>
       </div>
     );
   }
@@ -20,6 +22,7 @@ const GoogleLogin = () => {
   return (
     <div>
       <h5>or</h5>
+      {errorElement}
       <div>
         <button onClick={() => signInWithGoogle()} className="btn btn-primary">
           <img src={google} alt="" /> Google Sign In

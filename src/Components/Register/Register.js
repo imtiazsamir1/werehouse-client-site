@@ -1,23 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 
 import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import GoogleLogin from "../Login/GoogleLogin/GoogleLogin";
 
 import "./Register.css";
 
 const Register = () => {
+  const [agree, setAgree] = useState(false);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
 
   const navigateLogin = () => {
     navigate("/login");
   };
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(event.target.email.value);
     // const agree = event.target.terms.checked;
+
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    console.log("Updated profile");
+    navigate("/home");
   };
   return (
     <div>
@@ -41,12 +54,21 @@ const Register = () => {
             placeholder="Password"
             required
           />
-          <input type="checkbox" name="terms" id="terms" />
+          <input
+            onClick={() => setAgree(!agree)}
+            type="checkbox"
+            name="terms"
+            id="terms"
+          />
 
-          <label className={`ps-2  "" : "text-danger"}`} htmlFor="terms">
+          <label
+            className={`ps-2 ${agree ? "" : "text-danger"}`}
+            htmlFor="terms"
+          >
             Accept frruis warehouse Terms and Conditions
           </label>
           <input
+            disabled={!agree}
             className="w-50 mx-auto btn btn-primary mt-2"
             type="submit"
             value="Register"
