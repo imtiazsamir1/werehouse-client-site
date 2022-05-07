@@ -15,6 +15,7 @@ import GoogleLogin from "./Components/Login/GoogleLogin/GoogleLogin";
 
 import NoteFound from "./Components/NotFound/NoteFound";
 import RequireAuth from "./Components/Login/RequireAuth/RequireAuth";
+import Manage from "./Components/Inventory/ManageItem/Manage/Manage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/*" element={<NoteFound></NoteFound>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/manage" element={<Manage></Manage>}></Route>
 
         <Route
           path="/manageItem"

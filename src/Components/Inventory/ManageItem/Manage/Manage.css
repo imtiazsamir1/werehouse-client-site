@@ -1,0 +1,37 @@
+.manage-img{
+    height: 240px;
+    width: 400px;
+    border-radius: 20px;
+ 
+    margin-top: 50px;
+}
+.manage-cart{
+    border: 2px solid rgba(56, 167, 56, 0.864);
+    margin: 50px;
+    margin-left: 350px;
+    margin-right: 350px;
+    border-radius: 20px;
+    padding: 30px;
+    
+}
+.edit-btn{
+    border: none;
+    background-color:rgba(56, 167, 56, 0.864) ;
+    border-radius: 5px;
+    color: aliceblue;
+    margin: 5px;
+}
+.delete-btn{
+    border: none;
+    background-color:rgba(122, 19, 5, 0.864) ;
+    border-radius: 5px;
+    color: aliceblue;
+    margin: 5px;
+}
+.add-item-btn{
+    border: none;
+    background-color:rgba(56, 167, 56, 0.864)  ;
+    border-radius: 5px;
+    color: aliceblue;
+    margin: 15px;
+}

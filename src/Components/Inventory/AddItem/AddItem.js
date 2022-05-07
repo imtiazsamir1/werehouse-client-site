@@ -45,6 +45,12 @@ const AddItem = () => {
         />
         <input
           className="mb-2"
+          placeholder="quantity"
+          type="number"
+          {...register("quantity")}
+        />
+        <input
+          className="mb-2"
           placeholder="Photo URL"
           type="text"
           {...register("img")}

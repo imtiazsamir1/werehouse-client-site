@@ -13,7 +13,7 @@ const Fruit = ({ fruit }) => {
     <div className="fruit-cart">
       <img className="w-100" src={img} alt="" />
       <h2>{name}</h2>
-      <h2>{price}</h2>
+      <h2>$:{price}</h2>
       <p>{description}</p>
       <h5>Quantity:{quantity}</h5>
       <h5>Supplier-Name:{supplierName}</h5>

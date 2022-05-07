@@ -22,7 +22,7 @@ const Fruits = () => {
         <p className="products">Banana</p>
       </div>
       <div className="cart">
-        {fruits.map((fruit) => (
+        {fruits.slice(0, 6).map((fruit) => (
           <Fruit key={fruit._id} fruit={fruit}></Fruit>
         ))}
       </div>
