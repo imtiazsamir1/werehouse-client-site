@@ -42,9 +42,7 @@ const Manage = () => {
           <img className="manage-img" src={fruit.img} alt="" />
 
           <h4>Quantity:{fruit.quantity}</h4>
-          <Link to={`/update/${fruit._id}`}>
-            <button className="edit-btn">Update</button>
-          </Link>
+
           <button
             className="delete-btn"
             onClick={() => handleUserDelete(fruit._id)}

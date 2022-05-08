@@ -1,20 +1,30 @@
 import React from "react";
-import "./ManageInv.css";
+import { Card, CardGroup } from "react-bootstrap";
 
-const ManageInv = ({ itemManage }) => {
-  const { _id, name, img, description, price, quantity, supplierName } =
-    itemManage;
-  console.log(itemManage);
-
+const ManageInv = () => {
   return (
     <div>
-      <h2>{name}</h2>
-      <img className="manage-img" src={img} alt="" />
-      <h3>Quantyty:{quantity}</h3>
-      <div>
-        <button className="edit-btn">Edit</button>
-        <button className="delete-btn">Delete</button>
-      </div>
+      <h2>Service Provide</h2>
+      <CardGroup>
+        <Card>
+          <Card.Body className="bg-white">
+            <Card.Title>1420+</Card.Title>
+            <Card.Text>Coustomer</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body className="bg-white">
+            <Card.Title>50+</Card.Title>
+            <Card.Text>Country</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body className="bg-white ">
+            <Card.Title>5000+</Card.Title>
+            <Card.Text>Delivery</Card.Text>
+          </Card.Body>
+        </Card>
+      </CardGroup>
     </div>
   );
 };

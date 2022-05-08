@@ -5,11 +5,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div>
-        <h3>CONTACT US</h3>
-        <p className="contact">
-          Address:<span>123 Fake Street, New York</span>
-          Phone:<span>(08) 8827 633354</span>
-        </p>
+        <span>Copyright © 2022 Fruit Garden. All Rights Reserved.</span>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import ManageInv from "../Inventory/ManageInv/ManageInv";
 import Banner from "./Banner/Banner";
 import Footer from "./Footer/Footer";
 import Fruits from "./Fruits/Fruits";
@@ -10,7 +11,7 @@ const Home = () => {
       <Banner></Banner>
       <Fruits></Fruits>
       <HouseDesk></HouseDesk>
-      <Footer></Footer>
+      <ManageInv></ManageInv>
     </div>
   );
 };

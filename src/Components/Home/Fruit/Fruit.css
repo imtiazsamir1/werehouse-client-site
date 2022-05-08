@@ -19,9 +19,9 @@
 .product-name{
     display: flex;
     justify-content: center;
-    margin: 5px;
+    margin: 1px;
 }
 .products{
-    margin: 15px;
+    margin: 10px;
     color: rgba(56, 167, 56, 0.864);
 }

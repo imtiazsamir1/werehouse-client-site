@@ -35,3 +35,38 @@
     color: aliceblue;
     margin: 15px;
 }
+@media only screen and (max-width:576px) {
+    .manage-cart{
+        border: 2px solid rgba(56, 167, 56, 0.864);
+        margin: 10px;
+        margin-left: 50px;
+        margin-right: 50px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .manage-img{
+        height: 140px;
+        width: 200px;
+        border-radius: 20px;
+     
+        margin-top: 50px;
+    }    
+ }
+  @media only screen and (min-width: 577px) and (max-width: 992px) {
+    .manage-cart{
+        border: 2px solid rgba(56, 167, 56, 0.864);
+        margin: 50px;
+        margin-left: 350px;
+        margin-right: 350px;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    .manage-img{
+        height: 240px;
+        width: 400px;
+        border-radius: 20px;
+     
+        margin-top: 50px;
+    }
+        
+  } 

@@ -13,3 +13,17 @@
  .fruit-heading{
      margin-top: 60px;
  }
+ @media only screen and (max-width:576px) {
+    .cart{
+     
+       display: grid;
+       grid-template-columns: repeat(1, 1fr);
+       gap: 0px;
+       margin-top: 10px;
+    }
+ }
+  @media only screen and (min-width: 577px) and (max-width: 992px) {
+     .cart{
+         grid-template-columns: repeat(2, 1fr);
+     }
+  } 
