@@ -11,7 +11,9 @@ const ManageItem = () => {
 
   const getItem = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:5000/manageInv`);
+      const { data } = await axios.get(
+        `https://pacific-stream-39269.herokuapp.com/manageInv`
+      );
       if (data) {
         setManageItem(data);
       }

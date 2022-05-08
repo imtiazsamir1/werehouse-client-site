@@ -6,7 +6,7 @@ const Fruits = () => {
   const [fruits, setFruits] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/fruit")
+    fetch("https://pacific-stream-39269.herokuapp.com/fruit")
       .then((res) => res.json())
       .then((data) => setFruits(data));
   }, []);

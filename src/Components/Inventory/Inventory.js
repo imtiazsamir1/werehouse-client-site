@@ -8,7 +8,7 @@ const Inventory = () => {
 
   const [fruit, setFruit] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/fruit/${inventoryId}`;
+    const url = `https://pacific-stream-39269.herokuapp.com/fruit/${inventoryId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setFruit(data));
@@ -19,9 +19,14 @@ const Inventory = () => {
     newQuantity = productQuantity - 1;
     fruit.quantity = newQuantity;
     const newData = { quantity: fruit.quantity };
-    await axios.put(`http://localhost:5000/inventory/${inventoryId}`, newData);
+    await axios.put(
+      `https://pacific-stream-39269.herokuapp.com/inventory/${inventoryId}`,
+      newData
+    );
     axios
-      .get(`http://localhost:5000/inventory/${inventoryId}`)
+      .get(
+        `https://pacific-stream-39269.herokuapp.com/inventory/${inventoryId}`
+      )
       .then((response) => {
         setFruit(response.data);
         toast("Delivered successfully");
@@ -45,11 +50,13 @@ const Inventory = () => {
     }
 
     await axios.put(
-      `http://localhost:5000/inventory/${inventoryId}`,
+      `https://pacific-stream-39269.herokuapp.com/inventory/${inventoryId}`,
       newReStockQuantity
     );
     axios
-      .get(`http://localhost:5000/inventory/${inventoryId}`)
+      .get(
+        `https://pacific-stream-39269.herokuapp.com/inventory/${inventoryId}`
+      )
       .then((response) => {
         setFruit(response.data);
         toast("Item Restock Successfully");

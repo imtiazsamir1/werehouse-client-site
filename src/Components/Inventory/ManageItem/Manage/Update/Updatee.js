@@ -6,7 +6,7 @@ const Updatee = () => {
   const [fruit, setUser] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/fruit/${id}`;
+    const url = `https://pacific-stream-39269.herokuapp.com/fruit/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUser(data));
@@ -19,7 +19,7 @@ const Updatee = () => {
 
     const updatedUser = { name, email };
 
-    const url = `http://localhost:5000/fruit/${id}`;
+    const url = `https://pacific-stream-39269.herokuapp.com/fruit/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

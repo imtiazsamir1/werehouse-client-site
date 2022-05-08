@@ -21,7 +21,7 @@ const AddItem = () => {
     e.target.quantity.value = "";
     e.target.img.value = "";
     console.log(data);
-    const url = `http://localhost:5000/fruit`;
+    const url = `https://pacific-stream-39269.herokuapp.com/fruit`;
     fetch(url, {
       method: "POST",
       headers: {

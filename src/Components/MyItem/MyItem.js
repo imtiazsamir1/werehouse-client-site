@@ -11,7 +11,7 @@ const MyItem = () => {
   useEffect(() => {
     const getItem = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/items?email=${email}`;
+      const url = `https://pacific-stream-39269.herokuapp.com/items?email=${email}`;
 
       await axios
         .get(url, {
