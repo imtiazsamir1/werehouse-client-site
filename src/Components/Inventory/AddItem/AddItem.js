@@ -1,14 +1,25 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+  const email = user.email;
   const {
     register,
     handleSubmit,
     watch,
+
     formState: { errors },
+    // formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
+    e.target.name.value = "";
+    e.target.description.value = "";
+    e.target.price.value = "";
+    e.target.quantity.value = "";
+    e.target.img.value = "";
     console.log(data);
     const url = `http://localhost:5000/fruit`;
     fetch(url, {
@@ -16,13 +27,14 @@ const AddItem = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, email }),
     })
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
       });
   };
+
   return (
     <div className="w-50 mx-auto">
       <h2>Please add a service</h2>

@@ -16,6 +16,10 @@ import GoogleLogin from "./Components/Login/GoogleLogin/GoogleLogin";
 import NoteFound from "./Components/NotFound/NoteFound";
 import RequireAuth from "./Components/Login/RequireAuth/RequireAuth";
 import Manage from "./Components/Inventory/ManageItem/Manage/Manage";
+import Updatee from "./Components/Inventory/ManageItem/Manage/Update/Updatee";
+import MyItem from "./Components/MyItem/MyItem";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -25,18 +29,19 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/*" element={<NoteFound></NoteFound>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/manage" element={<Manage></Manage>}></Route>
-
         <Route
-          path="/manageItem"
+          path="/manage"
           element={
             <RequireAuth>
-              <ManageItem></ManageItem>
+              <Manage></Manage>
             </RequireAuth>
           }
         ></Route>
+        <Route path="update/:id" element={<Updatee></Updatee>}></Route>
+
         <Route path="/addItem" element={<AddItem></AddItem>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/myItem" element={<MyItem></MyItem>}></Route>
         <Route
           path="/inventory/:inventoryId"
           element={<Inventory></Inventory>}
@@ -48,6 +53,7 @@ function App() {
         <Route path="/login" element={<LogIn></LogIn>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

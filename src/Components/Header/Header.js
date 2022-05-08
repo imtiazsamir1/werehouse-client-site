@@ -40,6 +40,9 @@ const Header = () => {
               <Nav.Link as={Link} to="/blogs">
                 Blogs
               </Nav.Link>
+              <Nav.Link as={Link} to="/myItem">
+                My Item
+              </Nav.Link>
 
               {user ? (
                 <button

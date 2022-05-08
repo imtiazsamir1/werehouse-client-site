@@ -29,11 +29,10 @@ const Register = () => {
     console.log("user", user);
   }
   const handleRegister = async (event) => {
-    event.preventDefault();
+    event.preventDefault(" ");
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    // const agree = event.target.terms.checked;
 
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
